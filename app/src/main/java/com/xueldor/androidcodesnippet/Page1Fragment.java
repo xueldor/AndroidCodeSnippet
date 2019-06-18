@@ -7,14 +7,20 @@ import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.Message;
 import android.provider.MediaStore;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.FileProvider;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
+
+import com.xueldor.androidcodesnippet.fragments.ShowGifFragment;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
@@ -25,7 +31,8 @@ import java.util.Locale;
 public class Page1Fragment extends Fragment {
 
     private Button takePhotoButtion;
-    private Button fileProviderButtion22;
+    private Button fileProviderButtion;
+    private Button showGifButtion;
 
     public Page1Fragment() {
     }
@@ -51,9 +58,13 @@ public class Page1Fragment extends Fragment {
 
         takePhotoButtion = view.findViewById(R.id.take_photo_beforeN_button);
         takePhotoButtion.setOnClickListener(this::onClickTakePhotoButton);
-        fileProviderButtion22 = view.findViewById(R.id.take_photo_sinceN_button);
-        fileProviderButtion22.setOnClickListener(this::onClickFileProviderButton);
+        fileProviderButtion = view.findViewById(R.id.take_photo_sinceN_button);
+        fileProviderButtion.setOnClickListener(this::onClickFileProviderButton);
 
+        showGifButtion = view.findViewById(R.id.show_gif_button);
+        showGifButtion.setOnClickListener(v -> {
+            startSecondActivity(ShowGifFragment.class);
+        });
         return view;
     }
 
@@ -65,6 +76,11 @@ public class Page1Fragment extends Fragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
     }
 
     @Override
@@ -141,6 +157,11 @@ public class Page1Fragment extends Fragment {
                     + ",height " + options.outHeight,Toast.LENGTH_SHORT);
         }
 
+    }
+
+    private void startSecondActivity(Class<? extends Fragment> clz){
+        Intent intent = SecondActivity.newIntent(getContext(), clz);
+        startActivity(intent);
     }
 
 }
