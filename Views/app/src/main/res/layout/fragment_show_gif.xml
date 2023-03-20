@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             xmlns:gifview="http://schemas.android.com/apk/res-auto"
+             tools:context=".fragments.ShowGifFragment">
+    <view
+        android:id="@+id/first_gif_view"
+        class="com.xueldor.views.fragments.ShowGifFragment$GifView"
+        gifview:src="@raw/f032"
+        gifview:frames="18"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:text=""/>
+    <!--GifView是内部类，应该用上面这种方法-->
+    <!--<com.xueldor.androidcodesnippet.fragments.ShowGifFragment.GifView-->
+        <!--android:id="@+id/first_gif_view"-->
+        <!--gifview:src="@raw/f032"-->
+        <!--android:layout_width="100dp"-->
+        <!--android:layout_height="100dp"-->
+        <!--android:text=""/>-->
+
+</FrameLayout>

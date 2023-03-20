@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+    <Button
+        android:id="@+id/take_photo_beforeN_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="调用系統相机拍照-7.0之前"/>
+    <Button
+        android:id="@+id/take_photo_sinceN_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="调用系統相机拍照-7.0开始"/>
+    <Button
+        android:id="@+id/take_photo_camera2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="调用camera2拍照(待实现)"/>
+    <Button
+        android:id="@+id/take_photo_camerax"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="调用camerax拍照(待实现)"/>
+
+</LinearLayout>
